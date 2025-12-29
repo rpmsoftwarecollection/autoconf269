@@ -167,15 +167,15 @@ install -p -m 0644 %{SOURCE2} %{buildroot}%{_emacs_sitelispdir}/autoconf-%{versi
 %{_datadir}/autoconf-%{version}/autoconf/m4sugar/m4sugar.m4f
 %{_datadir}/autoconf-%{version}/autoconf/m4sugar/version.m4
 %{_datadir}/autoconf-%{version}/config.site
-%{_datadir}/share/man/man1/autoconf-2.69.1.gz
-%{_datadir}/share/man/man1/autoheader-2.69.1.gz
-%{_datadir}/share/man/man1/autom4te-2.69.1.gz
-%{_datadir}/share/man/man1/autoreconf-2.69.1.gz
-%{_datadir}/share/man/man1/autoscan-2.69.1.gz
-%{_datadir}/share/man/man1/autoupdate-2.69.1.gz
-%{_datadir}/share/man/man1/config.guess-2.69.1.gz
-%{_datadir}/share/man/man1/config.sub-2.69.1.gz
-%{_datadir}/share/man/man1/ifnames-2.69.1.gz
+%{_datadir}/man/man1/autoconf-2.69.1.gz
+%{_datadir}/man/man1/autoheader-2.69.1.gz
+%{_datadir}/man/man1/autom4te-2.69.1.gz
+%{_datadir}/man/man1/autoreconf-2.69.1.gz
+%{_datadir}/man/man1/autoscan-2.69.1.gz
+%{_datadir}/man/man1/autoupdate-2.69.1.gz
+%{_datadir}/man/man1/config.guess-2.69.1.gz
+%{_datadir}/man/man1/config.sub-2.69.1.gz
+%{_datadir}/man/man1/ifnames-2.69.1.gz
 %if %{with autoconf_enables_emacs}
 %{_datadir}/emacs/site-lisp/autoconf-%{version}/autoconf-init.el
 %{_datadir}/emacs/site-lisp/autoconf-%{version}/autoconf-mode.el
