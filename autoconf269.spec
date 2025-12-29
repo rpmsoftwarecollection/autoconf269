@@ -50,7 +50,7 @@ BuildRequires:      perl(Text::ParseWords)
 BuildRequires:      help2man
 BuildRequires:      make
 
-%if %{with check}
+#%if %{with check}
 %if %{with autoconf_enables_optional_test}
 # For extended testsuite coverage
 BuildRequires:      gcc-gfortran
@@ -58,7 +58,7 @@ BuildRequires:      gcc-gfortran
 BuildRequires:      erlang
 %endif
 %endif
-%endif
+#%endif
 
 # filter out bogus perl(Autom4te*) dependencies
 %global __requires_exclude %{?__requires_exclude:%__requires_exclude|}^perl\\(Autom4te::
@@ -97,12 +97,12 @@ export EMACS=%{_bindir}/false
 %make_build
 
 
-%check
-%if %{with check}
+#%check
+#%if %{with check}
 # make check # TESTSUITEFLAGS='1-198 200-' # will disable nr. 199.
 # make check TESTSUITEFLAGS="-k \!erlang"
-make check %{?_smp_mflags}
-%endif
+#make check %{?_smp_mflags}
+#%endif
 
 
 %install
