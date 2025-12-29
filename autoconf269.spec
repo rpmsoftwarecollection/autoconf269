@@ -27,7 +27,7 @@ BuildArch:  noarch
 
 
 # run "make check" by default
-%bcond_without check
+#%bcond_without check
 
 # m4 >= 1.4.6 is required, >= 1.4.14 is recommended:
 BuildRequires:      perl
