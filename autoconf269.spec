@@ -91,6 +91,7 @@ export EMACS=%{_bindir}/emacs
 export EMACS=%{_bindir}/false
 %endif
 %configure --program-suffix=-%{version} \
+--datarootdir=%{_prefix}/autoconf-%{version}
     %{?with_autoconf_enables_emacs:--with-lispdir=%{_emacs_sitelispdir}/autoconf-%{version}}
 %make_build
 
