@@ -6,7 +6,7 @@
 Summary:    A GNU tool for automatically configuring source code
 Name:       autoconf269
 Version:    2.69
-Release:    41%{?dist}
+Release:    42%{?dist}
 License:    GPLv2+ and GFDL
 Source0:    https://ftp.gnu.org/gnu/autoconf/autoconf-%{version}.tar.xz
 Source1:    config.site
@@ -117,20 +117,75 @@ install -p -m 0644 %{SOURCE2} %{buildroot}%{_emacs_sitelispdir}/autoconf-%{versi
 %endif
 
 %files
-#%license COPYING*
-#%{_bindir}/*
-#%{_infodir}/autoconf.info*
-# don't include standards.info, because it comes from binutils...
-#%exclude %{_infodir}/standards*
-# don't include info's TOP directory
-#%exclude %{_infodir}/dir
-#%{_datadir}/autoconf/
-#%{_datadir}/config.site
-#%if %{with autoconf_enables_emacs}
-#%{_datadir}/emacs/site-lisp/*
-#%endif
-#%{_mandir}/man1/*
-#%doc AUTHORS ChangeLog NEWS README THANKS TODO
+%{_bindir}/autoconf-%{version}
+%{_bindir}/autoheader-%{version}
+%{_bindir}/autom4te-%{version}
+%{_bindir}/autoreconf-%{version}
+%{_bindir}/autoscan-%{version}
+%{_bindir}/autoupdate-%{version}
+%{_bindir}/ifnames-%{version}
+%{_datadir}/autoconf-%{version}/autoconf/Autom4te/C4che.pm
+%{_datadir}/autoconf-%{version}/autoconf/Autom4te/ChannelDefs.pm
+%{_datadir}/autoconf-%{version}/autoconf/Autom4te/Channels.pm
+%{_datadir}/autoconf-%{version}/autoconf/Autom4te/Configure_ac.pm
+%{_datadir}/autoconf-%{version}/autoconf/Autom4te/FileUtils.pm
+%{_datadir}/autoconf-%{version}/autoconf/Autom4te/General.pm
+%{_datadir}/autoconf-%{version}/autoconf/Autom4te/Getopt.pm
+%{_datadir}/autoconf-%{version}/autoconf/Autom4te/Request.pm
+%{_datadir}/autoconf-%{version}/autoconf/Autom4te/XFile.pm
+%{_datadir}/autoconf-%{version}/autoconf/INSTALL
+%{_datadir}/autoconf-%{version}/autoconf/autoconf/autoconf.m4
+%{_datadir}/autoconf-%{version}/autoconf/autoconf/autoconf.m4f
+%{_datadir}/autoconf-%{version}/autoconf/autoconf/autoheader.m4
+%{_datadir}/autoconf-%{version}/autoconf/autoconf/autoscan.m4
+%{_datadir}/autoconf-%{version}/autoconf/autoconf/autotest.m4
+%{_datadir}/autoconf-%{version}/autoconf/autoconf/autoupdate.m4
+%{_datadir}/autoconf-%{version}/autoconf/autoconf/c.m4
+%{_datadir}/autoconf-%{version}/autoconf/autoconf/erlang.m4
+%{_datadir}/autoconf-%{version}/autoconf/autoconf/fortran.m4
+%{_datadir}/autoconf-%{version}/autoconf/autoconf/functions.m4
+%{_datadir}/autoconf-%{version}/autoconf/autoconf/general.m4
+%{_datadir}/autoconf-%{version}/autoconf/autoconf/go.m4
+%{_datadir}/autoconf-%{version}/autoconf/autoconf/headers.m4
+%{_datadir}/autoconf-%{version}/autoconf/autoconf/lang.m4
+%{_datadir}/autoconf-%{version}/autoconf/autoconf/libs.m4
+%{_datadir}/autoconf-%{version}/autoconf/autoconf/oldnames.m4
+%{_datadir}/autoconf-%{version}/autoconf/autoconf/programs.m4
+%{_datadir}/autoconf-%{version}/autoconf/autoconf/specific.m4
+%{_datadir}/autoconf-%{version}/autoconf/autoconf/status.m4
+%{_datadir}/autoconf-%{version}/autoconf/autoconf/types.m4
+%{_datadir}/autoconf-%{version}/autoconf/autom4te.cfg
+%{_datadir}/autoconf-%{version}/autoconf/autoscan/autoscan.list
+%{_datadir}/autoconf-%{version}/autoconf/autotest/autotest.m4
+%{_datadir}/autoconf-%{version}/autoconf/autotest/autotest.m4f
+%{_datadir}/autoconf-%{version}/autoconf/autotest/general.m4
+%{_datadir}/autoconf-%{version}/autoconf/autotest/specific.m4
+%{_datadir}/autoconf-%{version}/autoconf/m4sugar/foreach.m4
+%{_datadir}/autoconf-%{version}/autoconf/m4sugar/m4sh.m4
+%{_datadir}/autoconf-%{version}/autoconf/m4sugar/m4sh.m4f
+%{_datadir}/autoconf-%{version}/autoconf/m4sugar/m4sugar.m4
+%{_datadir}/autoconf-%{version}/autoconf/m4sugar/m4sugar.m4f
+%{_datadir}/autoconf-%{version}/autoconf/m4sugar/version.m4
+%{_datadir}/autoconf-%{version}/config.site
+%{_datadir}/share/man/man1/autoconf-2.69.1.gz
+%{_datadir}/share/man/man1/autoheader-2.69.1.gz
+%{_datadir}/share/man/man1/autom4te-2.69.1.gz
+%{_datadir}/share/man/man1/autoreconf-2.69.1.gz
+%{_datadir}/share/man/man1/autoscan-2.69.1.gz
+%{_datadir}/share/man/man1/autoupdate-2.69.1.gz
+%{_datadir}/share/man/man1/config.guess-2.69.1.gz
+%{_datadir}/share/man/man1/config.sub-2.69.1.gz
+%{_datadir}/share/man/man1/ifnames-2.69.1.gz
+%if %{with autoconf_enables_emacs}
+%{_datadir}/emacs/site-lisp/autoconf-%{version}/autoconf-init.el
+%{_datadir}/emacs/site-lisp/autoconf-%{version}/autoconf-mode.el
+%{_datadir}/emacs/site-lisp/autoconf-%{version}/autoconf-mode.elc
+%{_datadir}/emacs/site-lisp/autoconf-%{version}/autotest-mode.el
+%{_datadir}/emacs/site-lisp/autoconf-%{version}/autotest-mode.elc
+%endif
+%exclude %{_infodir}/standards.info.gz
+%exclude %{_infodir}/dir
+%exclude %{_infodir}/autoconf.info.gz
 
 
 %changelog
