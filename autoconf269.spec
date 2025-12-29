@@ -91,7 +91,8 @@ export EMACS=%{_bindir}/emacs
 export EMACS=%{_bindir}/false
 %endif
 %configure --program-suffix=-%{version} \
---datarootdir=%{_prefix}/autoconf-%{version}
+--datarootdir=%{_datadir}/autoconf-%{version} \
+--datadir=%{_datadir}/autoconf-%{version} \
     %{?with_autoconf_enables_emacs:--with-lispdir=%{_emacs_sitelispdir}/autoconf-%{version}}
 %make_build
 
@@ -106,17 +107,17 @@ make check %{?_smp_mflags}
 
 %install
 %make_install
-mkdir -p %{buildroot}/share
-install -m 0644 %{SOURCE1} %{buildroot}%{_datadir}
+mkdir -p %{buildroot}%{_datadir}/autoconf-%{version}
+install -m 0644 %{SOURCE1} %{buildroot}%{_datadir}/autoconf-%{version}
 
 %if %{with autoconf_enables_emacs}
 # Create file to activate Emacs modes as required
-mkdir -p %{buildroot}%{_emacs_sitestartdir}
-install -p -m 0644 %{SOURCE2} %{buildroot}%{_emacs_sitestartdir}
+mkdir -p %{buildroot}%{_emacs_sitelispdir}/autoconf-%{version}
+install -p -m 0644 %{SOURCE2} %{buildroot}%{_emacs_sitelispdir}/autoconf-%{version}
 %endif
 
 %files
-%license COPYING*
+#%license COPYING*
 #%{_bindir}/*
 #%{_infodir}/autoconf.info*
 # don't include standards.info, because it comes from binutils...
